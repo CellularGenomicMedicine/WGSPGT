@@ -6,10 +6,17 @@ running a SLURM job scheduler. The specified resource requirements were optimise
 generated for this project.
 
 ## Data processing & QC
++ [Visualisation of lab step timings](QC/labtimings.R)
 + [coverage metrics from qualimap](QC/qualimap.sh)
-+ informative SNP [binning](QC/binning.R) and [chromosome heatmap visualisation](QC/coverageHeatmap.R)
++ informative SNP [binning](QC/binning.R) and [chromosome heatmap visualisation](QC/coverageHeatmap.R) - see PGT-SR folder for chromosome coordinate scripts.
+
+## PGT-M (PGT for monogenic disorders)
+5. [Haplarithm plotting](PGT-M/haplarithm.R)
+6. [direct mutation analysis visualisation](PGT-M/directMutationPlot.R)
+
 
 ## PGT-AO (PGT for aneuploidy origins)
+5. [Haplarithm plotting](PGT-AO/haplarithm.R) with [chromosome ideogram](PGT-AO/ideogram.R) - see PGT-SR folder for ideogram coordinate scripts.
 
 
 ## PGT-SR (PGT for structural rearrangements)
