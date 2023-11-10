@@ -14,7 +14,7 @@ Embryo trophectoderm biopsy WGS data was processed with the following steps:
     + [Depth per position calculation](PGT-MT/samtoolsDepth.sh)
     + [Combination of the per sample data](PGT-MT/combineDepths.R)
     + [Visualisation of the depth per position](PGT-MT/circosPlot.R)
-    + [Extraction and visualisation of the pathogenic sites](PGT-MT/pathogenicCoverageHistogram.R)
+    + [Extraction and visualisation](PGT-MT/pathogenicCoverageHistogram.R) of the [pathogenic sites (derived from MITOMAP November 2023)](PGT-MT/pathMITO.csv)
 4. Heteroplasmy level calculation
     + [Mitochondrial variant calling with GATK](PGT-MT/gatk.sh)
     + [Heteroplasmy level calculation](PGT-MT/heteroplasmy.R)
