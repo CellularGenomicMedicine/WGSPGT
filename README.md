@@ -7,6 +7,7 @@ generated for this project.
 
 ## Data processing & QC
 + [coverage metrics from qualimap](QC/qualimap.sh)
++ informative SNP [binning](QC/binning.R) and [chromosome heatmap visualisation](QC/coverageHeatmap.R)
 
 ## PGT-AO (PGT for aneuploidy origins)
 
@@ -14,9 +15,11 @@ generated for this project.
 ## PGT-SR (PGT for structural rearrangements)
 Embryo trophectoderm biopsy (and parental/reference) data was processed with the following steps:
 1. The data were processed as per the PGT-M processing up to and including haplarithmisis.
-2. [breakpoint analysis using Manta](PGT-SR/manta.sh)
-3. [Relevant breakpoint extraction](PGT-SR/extractBreakpoints.R)
-4. Custom [visualisation](PGT-SR/plotSR.R) of haplarithms including breakpoint information & chromosome schematics
+2. Deep (30-40X) sequenced data was subsampled as per PGT-M and the (segmented) logRs were [plotted](PGT-SR/plotLogRs.R)
+3. [breakpoint analysis using Manta](PGT-SR/manta.sh)
+4. [Relevant breakpoint extraction](PGT-SR/extractBreakpoints.R)
+5. Custom [visualisation](PGT-SR/plotSR.R) of haplarithms including breakpoint information & chromosome schematics
+       + generation of chrmosome fill / outline coodrinates for [normal](PGT-SR/normalCoordinates.R) and [affected](PGT-SR/affectedCoordinates.R)
 
 ## PGT-MT (PGT for mitochondrial disorders)
 Embryo trophectoderm biopsy WGS data was processed with the following steps:  
