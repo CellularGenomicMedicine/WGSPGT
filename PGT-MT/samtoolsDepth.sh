@@ -21,6 +21,6 @@
 
 cd dataDir
 
-module load samtools/1.15.1-cgm
+module load samtools/1.15.1
 
 samtools depth -a -b chrM.bed -H sampleID.bam > sampleID_MTcovg.txt
