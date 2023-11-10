@@ -15,7 +15,8 @@ generated for this project.
 Embryo trophectoderm biopsy (and parental/reference) data was processed with the following steps:
 1. The data were processed as per the PGT-M processing up to and including haplarithmisis.
 2. [breakpoint analysis using Manta](PGT-SR/manta.sh)
-3. Custom [visualisation](PGT-SR/plotSR.R) of haplarithms including breakpoint information & chromosome schematics
+3. [Relevant breakpoint extraction](PGT-SR/extractBreakpoints.R)
+4. Custom [visualisation](PGT-SR/plotSR.R) of haplarithms including breakpoint information & chromosome schematics
 
 ## PGT-MT (PGT for mitochondrial disorders)
 Embryo trophectoderm biopsy WGS data was processed with the following steps:  
