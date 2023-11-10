@@ -1,0 +1,110 @@
+Index,Locus Type,Locus,Associated Diseases,Allele,Position,aaΔ or RNA,Status ♣(Mitomap [ClinGen]),Last StatusUpdate
+1,tRNA,MT-TF,MELAS / MM & EXIT,m.583G>A,583,tRNA Phe,Cfrm [VUS*],2022.10.10
+2,tRNA,MT-TF,Maternally inherited epilepsy / mito tubulointerstitial kidney disease (MITKD) / Gitelman-like syndrome,m.616T>C,616,tRNA Phe,Cfrm [LP],2022.06.13
+3,tRNA,MT-RNR1,DEAF,m.1494C>T,1494,12S rRNA,Cfrm [LP],2022.06.27
+4,tRNA,MT-RNR1,DEAF; autism spectrum intellectual disability; possibly antiatherosclerotic,m.1555A>G,1555,12S rRNA,Cfrm [P],2022.12.15
+5,tRNA,MT-TV,AMDF,m.1606G>A,1606,tRNA Val,Cfrm [VUS*],2022.08.11
+6,tRNA,MT-TV,MNGIE-like disease / MELAS,m.1630A>G,1630,tRNA Val,Cfrm [VUS*],2022.11.14
+7,tRNA,MT-TV,Leigh Syndrome / HCM / MELAS,m.1644G>A,1644,tRNA Val,Cfrm [LP],2020.08.20
+8,tRNA,MT-TL1,MELAS / Leigh Syndrome / DMDF / MIDD / SNHL / CPEO / MM / FSGS / ASD / Cardiac+multi-organ dysfunction,m.3243A>G,3243,tRNA Leu (UUR),Cfrm [P],2020.07.29
+9,tRNA,MT-TL1,MM / MELAS / SNHL / CPEO,m.3243A>T,3243,tRNA Leu (UUR),Cfrm [LP],2022.10.10
+10,tRNA,MT-TL1,MELAS; possible atherosclerosis risk,m.3256C>T,3256,tRNA Leu (UUR),Cfrm [LP],2023.05.18
+11,tRNA,MT-TL1,MELAS / Myopathy,m.3258T>C,3258,tRNA Leu (UUR),Cfrm [LP],2022.08.08
+12,tRNA,MT-TL1,MMC / MELAS,m.3260A>G,3260,tRNA Leu (UUR),Cfrm [LP],2023.05.22
+13,tRNA,MT-TL1,MELAS / DM / MERRF-like,m.3271T>C,3271,tRNA Leu (UUR),Cfrm [P],2023.04.25
+14,tRNA,MT-TL1,PEM / retinal dystrophy in MELAS,m.3273delT,3273,tRNA Leu (UUR),Cfrm [VUS*],2023.05.23
+15,tRNA,MT-TL1,Myopathy,m.3280A>G,3280,tRNA Leu (UUR),Cfrm [VUS*],2022.08.23
+16,tRNA,MT-TL1,MELAS / Myopathy / Deafness+Cognitive Impairment,m.3291T>C,3291,tRNA Leu (UUR),Cfrm [LP],2022.10.03
+17,tRNA,MT-TL1,MM,m.3302A>G,3302,tRNA Leu (UUR),Cfrm [LP],2023.05.18
+18,tRNA,MT-TL1,MMC,m.3303C>T,3303,tRNA Leu (UUR),Cfrm [LP],2023.01.09
+19,Coding,MT-ND1,LHON MELAS overlap,m.3376G>A,3376,E24K,Cfrm [VUS*],2022.08.11
+20,Coding,MT-ND1,LHON,m.3460G>A,3460,A52T,Cfrm [P],2023.04.25
+21,Coding,MT-ND1,MELAS / Progressive Encephalomyopathy,m.3481G>A,3481,E59K,Cfrm [LP],2023.09.26
+22,Coding,MT-ND1,LHON,m.3635G>A,3635,S110N,Cfrm [LP],2022.08.23
+23,Coding,MT-ND1,MELAS / Leigh Syndrome / LDYT / BSN,m.3697G>A,3697,G131S,Cfrm [LP],2022.08.11
+24,Coding,MT-ND1,LHON,m.3700G>A,3700,A132T,Cfrm [VUS*],2022.04.13
+25,Coding,MT-ND1,LHON,m.3733G>A,3733,E143K,Cfrm [VUS*],2022.08.11
+26,Coding,MT-ND1,Progressive Encephalomyopathy / Leigh Syndrome / Optic Atrophy,m.3890G>A,3890,R195Q,Cfrm [LP],2022.08.11
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3902,DLA-GKV,Cfrm [LP],2022.08.11
+28,Coding,MT-ND1,LHON / Leigh-like phenotype,m.4171C>A,4171,L289M,Cfrm [VUS*],2022.08.11
+29,tRNA,MT-TI,CPEO / MS,m.4298G>A,4298,tRNA Ile,Cfrm [VUS*],2022.12.12
+30,tRNA,MT-TI,MICM,m.4300A>G,4300,tRNA Ile,Cfrm [LP*],2023.05.18
+31,tRNA,MT-TI,CPEO,m.4308G>A,4308,tRNA Ile,Cfrm [VUS*],2022.10.10
+32,tRNA,MT-TQ,Encephalopathy / MELAS,m.4332G>A,4332,tRNA Gln,Cfrm [VUS*],2023.01.23
+33,tRNA,MT-TM,Myopathy / MELAS / Leigh Syndrome / EXIT,m.4450G>A,4450,tRNA Met,Cfrm [LP],2023.02.27
+34,Coding,MT-ND2,EXIT with myalgia & ophthalmoplegia,m.4810G>A,4810,W114Term,Cfrm [LP},2023.10.09
+35,tRNA,MT-TW,Mitochondrial myopathy,m.5521G>A,5521,tRNA Trp,Cfrm [LP],2022.10.03
+36,tRNA,MT-TW,Leigh Syndrome,m.5537_5538insT,5537,tRNA Trp,Cfrm [LP],23/05/2023
+37,tRNA,MT-TA,Myopathy,m.5650G>A,5650,tRNA Ala,Cfrm [LP],2022.10.24
+38,tRNA,MT-TN,CPEO+ptosis+proximal myopathy,m.5690A>G,5690,tRNA Asn,Cfrm [LP],2023.01.09
+39,tRNA,MT-TN,CPEO / MM,m.5703G>A,5703,tRNA Asn,Cfrm [P],2023.02.13
+40,tRNA,MT-TN,Multiorgan failure / myopathy,m.5728T>C,5728,tRNA Asn,Cfrm [LP],2023.02.13
+41,"Coding, tRNA","MT-CO1, MT-TS1 precursor",SNHL,m.7445A>G,7445,"tRNA Ser (UCN) precursor, Term514Term",Cfrm [P],2022.08.08
+42,tRNA,MT-TS1,PEM / AMDF / Motor neuron disease-like,m.7471_7472insC,7471,tRNA Ser (UCN),Cfrm [P],2022.11.14
+43,tRNA,MT-TS1,MM / EXIT,m.7497G>A,7497,tRNA Ser (UCN),Cfrm [LP],2023.04.17
+44,tRNA,MT-TS1,SNHL,m.7510T>C,7510,tRNA Ser (UCN),Cfrm [LP],2023.03.13
+45,tRNA,MT-TS1,SNHL/Deafness,m.7511T>C,7511,tRNA Ser (UCN),Cfrm [LP],2022.11.30
+46,tRNA,MT-TK,Severe adult-onset multisymptom myopathy / Myoclonic epilepsy,m.8306T>C,8306,tRNA Lys,Cfrm [VUS*],2022.10.24
+47,tRNA,MT-TK,MNGIE-like / Progressive mito cytopathy,m.8313G>A,8313,tRNA Lys,Cfrm [LP],2023.03.13
+48,tRNA,MT-TK,"Myopathy, Exercise Intolerance, CPEO-like /childhood epilepsy with SNHL & eye disease",m.8340G>A,8340,tRNA Lys,Cfrm [LP],2023.05.22
+49,tRNA,MT-TK,MERRF; Other - LD / depressive mood disorder / leukoencephalopathy / HiCM / lipomas,m.8344A>G,8344,tRNA Lys,Cfrm [P],2021.11.03
+50,tRNA,MT-TK,MERRF,m.8356T>C,8356,tRNA Lys,Cfrm [LP],2023.03.13
+51,tRNA,MT-TK,MICM+DEAF / MERRF / Autism / Leigh Syndrome / Ataxia,m.8363G>A,8363,tRNA Lys,Cfrm [LP],2023.03.13
+52,Coding,MT-ATP8/6,Infantile cardiomyopathy / hyperammonemia,m.8528T>C,8528,ATP8:W55R ATP6:M1T,Cfrm [LP],2022.06.30
+53,Coding,MT-ATP6,BSN / Leigh syndrome,m.8851T>C,8851,W109R,Cfrm [VUS*],2022.04.13
+54,Coding,MT-ATP6,"Mitochondrial myopathy, lactic acidosis and sideroblastic anemia (MLASA) / IgG nephropathy",m.8969G>A,8969,S148N,Cfrm [LP],2022.08.11
+55,Coding,MT-ATP6,NARP / Leigh Disease / MILS / other,m.8993T>C,8993,L156P,Cfrm [P],2022.04.13
+56,Coding,MT-ATP6,NARP / Leigh Disease / MILS / other,m.8993T>G,8993,L156R,Cfrm [P],2022.04.13
+57,Coding,MT-ATP6,Ataxia syndromes,m.9035T>C,9035,L170P,Cfrm [LP],2022.06.30
+58,Coding,MT-ATP6,"MIDD, renal insufficiency",m.9155A>G,9155,Q210R,Cfrm [LP],2022.06.30
+59,Coding,MT-ATP6,FBSN / Leigh Disease / Spinocerebellar Ataxia,m.9176T>C,9176,L217P,Cfrm [P],2022.04.13
+60,Coding,MT-ATP6,Leigh Disease / Spastic Paraplegia / Spinocerebellar Ataxia,m.9176T>G,9176,L217R,Cfrm [LP],2022.08.11
+61,Coding,MT-ATP6,Leigh Disease / Ataxia syndromes / NARP-like disease / Episodic weakness and Charcot-Marie-Tooth,m.9185T>C,9185,L220P,Cfrm [P],2022.08.11
+62,Coding,MT-ATP6,Leigh Disease,m.9191T>C,9191,L222P,Cfrm [LP],2022.03.24
+63,Coding,MT-ATP6,Encephalopathy / Seizures / Lacticacidemia,m.9205_9206delTA,9205,Ter-M,Cfrm [LP],2022.08.11
+64,tRNA,MT-TG,PEM,m.10010T>C,10010,tRNA Gly,Cfrm [VUS*],2022.11.14
+65,Coding,MT-ND3,Leigh Disease / MELAS,m.10158T>C,10158,S34P,Cfrm [P],2022.04.13
+66,Coding,MT-ND3,Leigh Disease / Leigh-like Disease / ESOC,m.10191T>C,10191,S45P,Cfrm [P],2022.08.23
+67,Coding,MT-ND3,Leigh Disease / Dystonia / Stroke / LDYT,m.10197G>A,10197,A47T,Cfrm [P],2022.08.11
+68,Coding,MT-ND4L,LHON,m.10663T>C,10663,V65A,Cfrm [LP],2022.06.30
+69,Coding,MT-ND4,Leigh Disease,m.11777C>A,11777,R340S,Cfrm [LP],2022.08.11
+70,Coding,MT-ND4,LHON / Progressive Dystonia,m.11778G>A,11778,R340H,Cfrm [P],2022.08.11
+71,tRNA,MT-TH,MERRF-MELAS / Encephalopathy,m.12147G>A,12147,tRNA His,Cfrm [LP],2023.01.09
+72,tRNA,MT-TH,Maternally inherited non-syndromic deafness,m.12201T>C,12201,tRNA His,Cfrm [LP],2023.04.17
+73,tRNA,MT-TS2,DMDF / RP+SNHL,m.12258C>A,12258,tRNA Ser (AGY),Cfrm [LP],2023.03.28
+74,tRNA,MT-TL2,CPEO,m.12276G>A,12276,tRNA Leu (CUN),Cfrm [LP],2022.11.30
+75,tRNA,MT-TL2,CPEO / EXIT+Ophthalmoplegia,m.12294G>A,12294,tRNA Leu (CUN),Cfrm [VUS*],2022.10.24
+76,tRNA,MT-TL2,"CPEO / KSS / possible carotid atherosclerosis risk, trend toward myocardial infarction risk",m.12315G>A,12315,tRNA Leu (CUN),Cfrm [LP],2022.11.30
+77,tRNA,MT-TL2,CPEO / mitochondrial myopathy,m.12316G>A,12316,tRNA Leu (CUN),Cfrm [VUS*],2023.02.27
+78,Coding,MT-ND5,Leigh Disease,m.12706T>C,12706,F124L,Cfrm [LP],2022.08.11
+79,Coding,MT-ND5,Optic neuropathy/ retinopathy/ LD,m.13042G>A,13042,A236T,Cfrm [LP],2022.06.30
+80,Coding,MT-ND5,LHON,m.13051G>A,13051,G239S,Cfrm [VUS*],23/05/2023
+81,Coding,MT-ND5,"Ataxia+PEO / MELAS, LD, LHON, myoclonus, fatigue",m.13094T>C,13094,V253A,Cfrm [P],2022.08.11
+82,Coding,MT-ND5,LHON,m.13379A>G,13379,H348R,Cfrm [VUS*],2022.08.11
+83,Coding,MT-ND5,Leigh Disease / MELAS / LHON-MELAS Overlap Syndrome / negative association w Carotid Atherosclerosis,m.13513G>A,13513,D393N,Cfrm [P],2022.04.13
+84,Coding,MT-ND5,Leigh Disease / MELAS / Ca2+ downregulation,m.13514A>G,13514,D393G,Cfrm [LP],2022.08.11
+85,Coding,MT-ND6,MELAS / Leigh Disease,m.14453G>A,14453,A74V,Cfrm [LP],2022.08.11
+86,Coding,MT-ND6,LDYT / Leigh Disease / dystonia / carotid atherosclerosis risk,m.14459G>A,14459,A72V,Cfrm [P],2022.04.13
+87,Coding,MT-ND6,LHON,m.14482C>A,14482,M64I,Cfrm [LP],2022.08.11
+88,Coding,MT-ND6,LHON,m.14482C>G,14482,M64I,Cfrm [LP],2022.07.11
+89,Coding,MT-ND6,LHON,m.14484T>C,14484,M64V,Cfrm [P],2022.09.12
+90,Coding,MT-ND6,Dystonia / Leigh Disease / ataxia / ptosis / epilepsy,m.14487T>C,14487,M63V,Cfrm [P],2022.08.08
+91,Coding,MT-ND6,LHON,m.14495A>G,14495,L60S,Cfrm [LP],2022.08.11
+92,Coding,MT-ND6,LHON,m.14568C>T,14568,G36S,Cfrm [LP],2022.08.11
+93,Coding,MT-ND6,LHON / LS,m.14597A>G,14597,I26T,Cfrm [LP],2023.08.14
+94,tRNA,MT-TE,Reversible COX deficiency myopathy,m.14674T>C,14674,tRNA Glu,Cfrm [LP],2023.01.23
+95,tRNA,MT-TE,MM+DMDF / Encephalomyopathy / Dementia+diabetes+ophthalmoplegia,m.14709T>C,14709,tRNA Glu,Cfrm [LP],2023.01.23
+96,tRNA,MT-TE,Encephalomyopathy + Retinopathy,m.14710G>A,14710,tRNA Glu,Cfrm [VUS*],2022.12.15
+97,Coding,MT-CYB,EXIT / Septo-Optic Dysplasia,m.14849T>C,14849,S35P,Cfrm [VUS*],2022.08.11
+98,Coding,MT-CYB,"Multisystem Disorder, EXIT",m.15579A>G,15579,Y278C,Cfrm [VUS*],2022.07.11
+99,tRNA,MT-TT,LIMM / MERRF / mito disease,m.15923A>G,15923,tRNA Thr,Cfrm [LP],2023.06.26
+100,tRNA,MT-TP,MM / PEO,m.15990C>T,15990,tRNA Pro,Cfrm [LP],2022.02.13
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3903,DLA-GKV,Cfrm [LP],2022.08.11
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3904,DLA-GKV,Cfrm [LP],2022.08.11
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3905,DLA-GKV,Cfrm [LP],2022.08.11
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3906,DLA-GKV,Cfrm [LP],2022.08.11
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3907,DLA-GKV,Cfrm [LP],2022.08.11
+27,Coding,MT-ND1,EXIT+myalgia / severe LA+cardiac / 3-MGA aciduria / nephropathy+deafness+diabetes,m.3902_3908ACCTTGCinv,3908,DLA-GKV,Cfrm [LP],2022.08.11
+36,tRNA,MT-TW,Leigh Syndrome,m.5537_5538insT,5538,tRNA Trp,Cfrm [LP],23/05/2023
+42,tRNA,MT-TS1,PEM / AMDF / Motor neuron disease-like,m.7471_7472insC,7472,tRNA Ser (UCN),Cfrm [P],2022.11.14
+63,Coding,MT-ATP6,Encephalopathy / Seizures / Lacticacidemia,m.9205_9206delTA,9206,Ter-M,Cfrm [LP],2022.08.11
