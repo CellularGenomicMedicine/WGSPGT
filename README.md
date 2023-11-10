@@ -1,9 +1,21 @@
 # WGSPGT
-Data processing and visualisation for WGS-PGT.
+Data processing and visualisation for WGS-PGT (whole genome sequencing - preimplantation genetic testing).
 
 _Note:_ the included bash scripts are optimised for computation on a high performance computing cluster
 running a SLURM job scheduler. The specified resource requirements were optimised for the sequencing data
 generated for this project.
+
+## Data processing & QC
++ [coverage metrics from qualimap](QC/qualimap.sh)
+
+## PGT-AO (PGT for aneuploidy origins)
+
+
+## PGT-SR (PGT for structural rearrangements)
+Embryo trophectoderm biopsy (and parental/reference) data was processed with the following steps:
+1. The data were processed as per the PGT-M processing up to and including haplarithmisis.
+2. [breakpoint analysis using Manta](PGT-SR/manta.sh)
+3. Custom [visualisation](PGT-SR/plotSR.R) of haplarithms including breakpoint information & chromosome schematics
 
 ## PGT-MT (PGT for mitochondrial disorders)
 Embryo trophectoderm biopsy WGS data was processed with the following steps:  
@@ -18,3 +30,7 @@ Embryo trophectoderm biopsy WGS data was processed with the following steps:
 4. Heteroplasmy level calculation
     + [Mitochondrial variant calling with GATK](PGT-MT/gatk.sh)
     + [Heteroplasmy level calculation](PGT-MT/heteroplasmy.R)
+
+
+### References:
+__MITOMAP:__
