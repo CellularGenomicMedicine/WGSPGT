@@ -54,7 +54,7 @@ These are all relevant R scripts to process whole genome sequencing data using H
 + [coverage metrics from qualimap](QC/qualimap.sh)
 + [Extract qualimap output](QC/QualimapExtraction.R)
 + [Visualisation coverage metrics](QC/CoveragePlots.R)
-+ [liftover coordinates from onePGT output](QC/Liftoverhg19.R)
++ [liftover coordinates from onePGT output](QC/LiftOverhg19.R)
 + informative SNP [binning](QC/binning.R) and [chromosome heatmap visualisation](QC/coverageHeatmap.R) - see PGT-SR folder for chromosome coordinate scripts.
 
 ## PGT-M (PGT for monogenic disorders)
