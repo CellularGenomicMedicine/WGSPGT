@@ -1,0 +1,5 @@
+SampleID;Sample_Project;Sample_MetaProject;Sample_Status;Sample_MetaInfo;Family_Interval;Family_second_Interval;Family_Indication;Family_Dnr
+DNA23–00001;PGD9999;PGT;UM;Mother;chr2_1001_1002_Pat;ND;GENE_PGD;D23/11111
+DNA23–00002;PGD9999;PGT;AF;Father;chr2_1001_1002_Pat;ND;GENE_PGD;D23/11111
+9999_embryo-1;PGD9999;PGT;AS;SiblingF;chr2_1001_1002_Pat;ND;GENE_PGD;D23/11111
+9999_embryo-1;PGD9999;PGT;E;Embryo_9999_embryo_1;chr2_1001_1002_Pat;ND;GENE_PGD;D23/11111
