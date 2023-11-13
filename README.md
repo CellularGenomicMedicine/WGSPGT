@@ -50,6 +50,7 @@ These are all relevant R scripts to process whole genome sequencing data using H
 + [Rda](Haplarithmisis/Rda)
 
 ## Data processing & QC
++ [Subsampling](QC/SubSampling.sh) to desired target coverage
 + [Visualisation of lab step timings](QC/labtimings.R)
 + [coverage metrics from qualimap](QC/qualimap.sh)
 + [Extract qualimap output](QC/QualimapExtraction.R)
