@@ -37,7 +37,7 @@ These are all relevant R scripts to process whole genome sequencing data using H
 4. [QDNASeq](Haplarithmisis/QDNASeq)
 #### EmbryoTest: when embryo sequencing information is present (continue with step 5 NucBedPrep)
 5. [NucBedPrep](Haplarithmisis/NucBedPrep)
-6. [PGT Wave correction](Haplarithmisis/WaveCorrection)
+6. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh)
 7. [Haplarithmisis](Haplarithmisis/Haplarithmisis)
 8. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
 9. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
