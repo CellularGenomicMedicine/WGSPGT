@@ -1,6 +1,14 @@
 # WGSPGT
 Data processing and visualisation for WGS-PGT (whole genome sequencing - preimplantation genetic testing).
 
+The WGS-PGT approach, for the first time, enables all forms of PGT on nuclear and mitochondrial DNA in a single-assay.
+Specifically, our innovative approach outperforms traditional and state-of-the-art PGT, including:
+1. PGT for genetic indications in complex genomic regions;
+2. direct detection of single- and few-base pair genetic variations
+3. novel form of PGT-A that uncovers segregational origin (meiotic vs. mitotic) of aneuploidies and their level of mosaicism, an approach we coin PGT-AO
+4. (in)direct detection of the translocation breakpoints and inheritance of normal and derivative chromosomes
+5. PGT for mitochondrial DNA (mtDNA) disorders
+
 _Note:_ the included bash scripts are optimised for computation on a high performance computing cluster
 running a SLURM job scheduler. The specified resource requirements were optimised for the sequencing data
 generated for this project.
@@ -95,5 +103,5 @@ Embryo trophectoderm biopsy WGS data was processed with the following steps:
     + [Heteroplasmy level calculation](PGT-MT/heteroplasmy.R)
 
 
-### References:
+#### References:
 __MITOMAP:__ https://www.mitomap.org/foswiki/bin/view/MITOMAP/ConfirmedMutations
