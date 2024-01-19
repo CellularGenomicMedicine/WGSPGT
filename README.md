@@ -51,8 +51,8 @@ These are all relevant R scripts to process whole genome sequencing data using H
 9. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
 
 #### PreTest: if no embryo sequencing information is present (continue with step 5 PreTestReportData)
-5. [PreTestReportData](Haplarithmisis/PreTestReportData)
-6. [PreTestReportPlot](Haplarithmisis/PreTestReportPlot)
+10. [PreTestReportData](Haplarithmisis/PreTestReportData)
+11. [PreTestReportPlot](Haplarithmisis/PreTestReportPlot)
 
 + [functions](Haplarithmisis/functions)
 + [Rda](Haplarithmisis/Rda)
@@ -69,8 +69,8 @@ These are all relevant R scripts to process whole genome sequencing data using H
 + informative SNP [binning](QC/binning.R) and [chromosome heatmap visualisation](QC/coverageHeatmap.R) - see PGT-SR folder for chromosome coordinate scripts.
 
 ## PGT-M (PGT for monogenic disorders)
-5. [Haplarithm plotting](PGT-M/haplarithm.R)
-6. [direct mutation analysis visualisation](PGT-M/directMutationPlot.R)
+1. [Haplarithm plotting](PGT-M/haplarithm.R)
+2. [direct mutation analysis visualisation](PGT-M/directMutationPlot.R)
 
 
 ## PGT-AO (PGT for aneuploidy origins)
@@ -103,5 +103,5 @@ Embryo trophectoderm biopsy WGS data was processed with the following steps:
     + [Heteroplasmy level calculation](PGT-MT/heteroplasmy.R)
 
 
-#### References:
+## References
 __MITOMAP:__ https://www.mitomap.org/foswiki/bin/view/MITOMAP/ConfirmedMutations
