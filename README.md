@@ -30,12 +30,12 @@ These are all relevant R scripts to process whole genome sequencing data using H
 1. [MetaInfo](Haplarithmisis/MetaInfo) <br>
    input: CSV file with family information [(example attached)](Haplarithmisis/ExampleSamplesheet.csv)
    + Sample ID (_Sample ID of each of the family members / embryos_)
-   + Family number (_PGT + familynumber_)
+   + Family number (_PGD + familynumber_)
    + PGT (_diagnostics / research_)
    + Sample Status (_E = Embryo, Combination of U = unaffected or A = affected and family member: F = Father, M = Mother, S = Sibling, GF = GrandFather, GM = GrandMother_)
    + Family interval (_chr_startposition_endposition_parent_, _example: chr2_1001_1002_Pat_)  
    + Family second interval (_in case of a compound heterozygous mutation, if not applicable: Non Defined (ND)_)
-   + Family indication (_GENE_ + "_ _PGT"_)
+   + Family indication (_GENE_ + "_ _PGD"_)
    + Family Dnr (_prefix D"year of analysis/number"_)
    
    input: PGT config file (.txt) with path to scripts, samplesheet and default parameters
@@ -46,9 +46,12 @@ These are all relevant R scripts to process whole genome sequencing data using H
 #### EmbryoTest: when embryo sequencing information is present (continue with step 5 NucBedPrep)
 5. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
 6. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh) _Note: the output from WaveCorrection is a .txt file containing GC content for each position with average of 10000 bp bins. The CG content file could be used for GC correction in downstream steps. In our analysis, we have not used this file for GC correction as QDNAseq package has integrated functions for GC correction._
-7. [Haplarithmisis](Haplarithmisis/Haplarithmisis)
-8. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
-9. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
+   * _sampledir will need to be filled in as the ConvertGenotype folder._
+   * _output_file_name will need to be filled in as the Family number_
+   * _windowsize will need to filled in as gtypemodulator_window from the PGT config file_
+8. [Haplarithmisis](Haplarithmisis/Haplarithmisis)
+9. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
+10. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
 
 #### PreTest: if no embryo sequencing information is present (continue with step 5 PreTestReportData)
 10. [PreTestReportData](Haplarithmisis/PreTestReportData)
