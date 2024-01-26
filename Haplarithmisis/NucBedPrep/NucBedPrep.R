@@ -22,7 +22,7 @@ tryCatch({
 		#remove Mitochondrial Chromosome, can cause pileup of strange haplotypes and is a contamination
 		Crd           	<- Crd[Crd[,"Chr"]!="M",]
 		SnpAnotFile		<- Crd[,c("Names","Chr","Position")]
-		Interval		<- data.frame(start=SnpAnotFile$Position-round(Window/2),end=SnpAnotFile$Position+round(Window/2),stringsAsFactors=FALSE)
+		Interval		<- data.frame(start=SnpAnotFile$Position-round(gtypemodulator_window/2),end=SnpAnotFile$Position+round(gtypemodulator_window/2),stringsAsFactors=FALSE)
 		ChrsLength		<- data.frame(ChrsLength)
 		ChrsLength[,1]	<- as.character(ChrsLength[,1])
 		ChrsLength[,2]	<- as.numeric(as.character(ChrsLength[,2]))
