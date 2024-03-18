@@ -27,22 +27,19 @@ Sequencing output is processed via the following steps (scripts not included her
    
 ### Running Haplarithmisis
 These are all relevant R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT 
-1. [MetaInfo](Haplarithmisis/MetaInfo) <br>
-   input: CSV file with family information [(example attached)](Haplarithmisis/ExampleSamplesheet.csv)
-   + Sample ID (_Sample ID of each of the family members / embryos_)
-   + Family number (_PGD + familynumber_)
-   + PGT (_diagnostics / research_)
-   + Sample Status (_E = Embryo, Combination of U = unaffected or A = affected and family member: F = Father, M = Mother, S = Sibling, GF = GrandFather, GM = GrandMother_)
-   + Family interval (_chr_startposition_endposition_parent_, _example: chr2_1001_1002_Pat_)  
-   + Family second interval (_in case of a compound heterozygous mutation, if not applicable: Non Defined (ND)_)
-   + Family indication (_GENE_ + "_ _PGD"_)
-   + Family Dnr (_prefix D"year of analysis/number"_)
+1. [MetaInfo](Haplarithmisis/MetaInfo) run the code below, more details for configuration: [config.txt](Haplarithmisis/PGT_config.txt), [samplesheet.csv](Haplarithmisis/ExampleSamplesheet.csv)
+
+    `Rscript MetaInfo.R PGT_config.txt`
+      
+2. [ConvertGenotype](Haplarithmisis/ConvertGenotype)
+
+   `Rscript ConvertGenotype.R PGT_config.txt`
    
-   input: PGT config file (.txt) with path to scripts, samplesheet and default parameters
-   + default parameters: Win=10, gammaBAF=10, bin=10000, Window=22, gammaSC=300, gammaMC=50, ExtInt=1, plateau=100, gtypemodulator_window=10000
-   
-3. [ConvertGenotype](Haplarithmisis/ConvertGenotype) TODO: expand explaination
-4. [QDNASeq](Haplarithmisis/QDNASeq) TODO: expand explaination
+4. [QDNASeq](Haplarithmisis/QDNASeq)
+
+   `Rscript QDNASeq.R PGT_config.txt`
+
+
 #### EmbryoTest: when embryo sequencing information is present (continue with step 5 NucBedPrep)
 5. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
 6. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh) _Note: the output from WaveCorrection is a .txt file containing GC content for each position with average of 10000 bp bins. The CG content file could be used for GC correction in downstream steps. In our analysis, we have not used this file for GC correction as QDNAseq package has integrated functions for GC correction._
