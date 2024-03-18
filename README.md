@@ -26,33 +26,33 @@ Sequencing output is processed via the following steps (scripts not included her
 
    
 ### Running Haplarithmisis
-These are all relevant R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT 
+These are R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT. 
 1. [MetaInfo](Haplarithmisis/MetaInfo) run the code below, more details for configuration: [config.txt](Haplarithmisis/PGT_config.txt), [samplesheet.csv](Haplarithmisis/ExampleSamplesheet.csv)
 
-    `Rscript MetaInfo.R PGT_config.txt`
+    `Rscript MetaInfo.R config.txt`
       
 2. [ConvertGenotype](Haplarithmisis/ConvertGenotype)
 
-   `Rscript ConvertGenotype.R PGT_config.txt`
+   `Rscript ConvertGenotype.R config.txt`
    
-4. [QDNASeq](Haplarithmisis/QDNASeq)
+3. [QDNASeq](Haplarithmisis/QDNASeq)
 
-   `Rscript QDNASeq.R PGT_config.txt`
+   `Rscript QDNASeq.R config.txt`
 
 
 #### EmbryoTest: when embryo sequencing information is present (continue with step 5 NucBedPrep)
-5. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
-6. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh) _Note: the output from WaveCorrection is a .txt file containing GC content for each position with average of 10000 bp bins. The CG content file could be used for GC correction in downstream steps. In our analysis, we have not used this file for GC correction as QDNAseq package has integrated functions for GC correction._
+4. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
+5. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh) _Note: the output from WaveCorrection is a .txt file containing GC content for each position with average of 10000 bp bins. The CG content file could be used for GC correction in downstream steps. In our analysis, we have not used this file for GC correction as QDNAseq package has integrated functions for GC correction._
    * __sampledir__ will need to be filled in as the ConvertGenotype folder.
    * __output_file_name__ will need to be filled in as the Family number.
    * __windowsize__ will need to filled in as gtypemodulator_window from the PGT config file.
-8. [Haplarithmisis](Haplarithmisis/Haplarithmisis)
-9. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
-10. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
+6. [Haplarithmisis](Haplarithmisis/Haplarithmisis)
+7. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
+8. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
 
 #### PreTest: if no embryo sequencing information is present (continue with step 5 PreTestReportData)
-10. [PreTestReportData](Haplarithmisis/PreTestReportData)
-11. [PreTestReportPlot](Haplarithmisis/PreTestReportPlot)
+9. [PreTestReportData](Haplarithmisis/PreTestReportData)
+10. [PreTestReportPlot](Haplarithmisis/PreTestReportPlot)
 
 + [functions](Haplarithmisis/functions)
 + [Rda](Haplarithmisis/Rda)
