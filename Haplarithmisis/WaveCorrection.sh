@@ -8,4 +8,4 @@
 #SBATCH --partition=defq
 
 module load bioinf/bedtools/2.17.0
-nucBed -bed ${sampledir}/Window10000.bed -fi ${refdir}/GCA_000001405.15_GRCh38_full_plus_hs38d1_analysis_set.pgt.fna > ${sampledir}/${windowsize}_GCcontent.txt
+nucBed -bed ${sampledir}/Window10000.bed -fi ${refdir}/GRCh38_pgt/GCA_000001405.15_GRCh38_full_plus_hs38d1_analysis_set.pgt.fna > ${sampledir}/${windowsize}_GCcontent.txt
