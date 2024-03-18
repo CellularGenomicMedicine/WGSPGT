@@ -32,12 +32,8 @@ These are R scripts to process whole genome sequencing data using Haplarithmisis
     `Rscript MetaInfo.R config.txt`
       
 2. [ConvertGenotype](Haplarithmisis/ConvertGenotype)
-
-   `Rscript ConvertGenotype.R config.txt`
    
 3. [QDNASeq](Haplarithmisis/QDNASeq)
-
-   `Rscript QDNASeq.R config.txt`
 
 #### EmbryoTest: when embryo sequencing information is present (continue with step4 NucBedPrep)
 4. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
