@@ -39,13 +39,14 @@ These are R scripts to process whole genome sequencing data using Haplarithmisis
 
    `Rscript QDNASeq.R config.txt`
 
-
-#### EmbryoTest: when embryo sequencing information is present (continue with step 5 NucBedPrep)
+#### EmbryoTest: when embryo sequencing information is present (continue with step4 NucBedPrep)
 4. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
+
 5. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh) _Note: the output from WaveCorrection is a .txt file containing GC content for each position with average of 10000 bp bins. The CG content file could be used for GC correction in downstream steps. In our analysis, we have not used this file for GC correction as QDNAseq package has integrated functions for GC correction._
    * __sampledir__ will need to be filled in as the ConvertGenotype folder.
    * __output_file_name__ will need to be filled in as the Family number.
    * __windowsize__ will need to filled in as gtypemodulator_window from the PGT config file.
+     
 6. [Haplarithmisis](Haplarithmisis/Haplarithmisis)
 7. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
 8. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
