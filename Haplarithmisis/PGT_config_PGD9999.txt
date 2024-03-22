@@ -1,0 +1,12 @@
+# Example config file for PGT family PGD9999
+family="PGD9999"
+indication="GENE_PGD"
+onderzoeksnr="D23/11111"
+script="/path/to/scripts"
+analyses="/path/to/analysisfolder"
+ideogram="Ideogram_GRCh38.rda"
+QDNASeqBins="QDNAseq.GRCh38.bins100.rda"
+Window=22
+gammaSC=300
+gammaMC=50
+plateau=100
