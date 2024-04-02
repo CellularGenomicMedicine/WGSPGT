@@ -1,0 +1,59 @@
+Bootstrap: docker
+From: rocker/r-ver:3.3.1
+IncludeCmd: yes
+
+%labels
+  Author Hamid Mushtaq
+  Version v1.0
+  R_Version 3.3.x
+  build_date 2019 Feb 22
+  R_bioconductor True
+
+%apprun R
+  exec R "$@"
+
+%apprun Rscript
+  exec Rscript "$@"
+
+%runscript
+  exec R "$@"
+
+%post
+  apt-get update
+  apt-get install -y libz-dev libcurl4-openssl-dev libxml2-dev libssl-dev
+ 
+  R --slave -e "install.packages('devtools')"
+  R --slave -e "devtools::install_github(repo='knausb/vcfR')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite()"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('SNPlocs.Hsapiens.dbSNP144.GRCh37')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('VariantAnnotation')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('snpStats')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('limma')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('signal')"
+  
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('plotrix')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('MASS')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('data.table')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('QDNAseq')"
+
+  R --slave -e "source('https://bioconductor.org/biocLite.R'); \
+  biocLite('Biobase')"

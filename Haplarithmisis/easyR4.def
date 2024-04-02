@@ -1,0 +1,33 @@
+Bootstrap: docker
+From: rocker/r-ver:4.2.1
+
+%labels
+  Author Ping Cao
+  Version v1.0-
+  R_Version 4.2.1
+  build_date 2024 Mar 30
+  R_bioconductor True
+  
+%apprun R
+  exec R "$@"
+
+%apprun Rscript
+  exec Rscript "$@"
+
+%runscript
+  exec R "$@"
+-
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update -
+    apt-get install -y --no-install-recommends
+    apt-get install -y apt bash curl libz-dev libbz2-dev libclang-dev liblzma-dev libcurl4-openssl-dev
+    apt-get install -y libxml2-dev libssl-dev libfribidi-dev python3
+    apt-get purge -y --autoremove software-properties-common
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+    
+    R -e "install.packages(c('devtools', 'BiocManager', 'vcfR', 'textshaping', 'tidyverse'))" 
+    
+    R -e "options(warn=2); install.packages('BiocManager')"
+    R -e "options(warn=2); BiocManager::install(c('SNPlocs.Hsapiens.dbSNP144.GRCh37', 'VariantAnnotation', 'snpStats', 'limma', 'signal', 'plotrix', 'MASS', 'data.table', 'QDNAseq', 'Biobase'), ask = FALSE, force = TRUE)"
+    R -e "options(warn=2); BiocManager::install(c('Matrix', 'survival', 'Rsamtools', 'Biostrings', 'XVector', 'SummarizedExperiment', 'GenomicRanges', 'GenomeInfoDb', 'IRanges', 'S4Vecotrs', 'BiocGenerics', 'BiocVersion', 'MatrixGenerics', 'MatrixStats'), ask = FALSE, force = TRUE)"  
