@@ -26,7 +26,7 @@ Sequencing output is processed via the following steps (scripts not included her
 
    
 ### Running Haplarithmisis
-These are R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT. 
+These are R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT. Here is a step-by-step implementation in [notebook](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/WGSPGT_haplarithmisis_pipeline.ipynb), we also provide a python pipeline for wrapping up these steps, see [haplarithmisis_pipeline.py](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/haplarithmisis_pipeline.py).
 1. [MetaInfo](Haplarithmisis/MetaInfo) run the code below, more details for configuration: [config.txt](Haplarithmisis/PGT_config.txt), [samplesheet.csv](Haplarithmisis/ExampleSamplesheet.csv)
 
     `Rscript MetaInfo.R config.txt`
