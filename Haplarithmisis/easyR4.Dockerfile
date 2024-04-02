@@ -1,5 +1,8 @@
 ARG DEBIAN_FRONTEND=noninteractive
 
+LABEL Ping Cao
+LABEL version="1.0"
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends software-properties-common \
     && add-apt-repository -y 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/' \
