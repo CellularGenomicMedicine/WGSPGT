@@ -1,7 +1,6 @@
 import argparse
 from subprocess import run
 
-
 def run_haplarithmisis(run_simg, goal, script_path, config_file, add_args=None, err_file="error.err"):
     
     r_script = f"{script_path}/{goal}/{goal}.R"
