@@ -26,14 +26,20 @@ Sequencing output is processed via the following steps (scripts not included her
 
    
 ### Running Haplarithmisis
+#### Installation
+- Installed packages in **Singularity**: [R version 3.3](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR3.def), [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.def).
+- **Docker:** [Dockerfile R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/Dockerfile).
+
+#### Scripts
 These are R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT. Here is a step-by-step implementation in [notebook](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/WGSPGT_haplarithmisis_pipeline.ipynb), we also provide a python pipeline for wrapping up these steps, see [haplarithmisis_pipeline.py](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/haplarithmisis_pipeline.py).
+
 1. [MetaInfo](Haplarithmisis/MetaInfo) more details for configuration: [config.txt](Haplarithmisis/PGT_config.txt), [samplesheet.csv](Haplarithmisis/ExampleSamplesheet.csv)
       
 2. [ConvertGenotype](Haplarithmisis/ConvertGenotype)
    
 3. [QDNASeq](Haplarithmisis/QDNASeq)
 
-#### EmbryoTest: when embryo sequencing information is present (continue with step4 NucBedPrep)
+##### EmbryoTest: when embryo sequencing information is present (continue with step4 NucBedPrep)
 4. [NucBedPrep](Haplarithmisis/NucBedPrep) _Note: NucBedPrep generates a file containing Chr, Position and Names (format: "chrX:Position") from the family vcf file that will be used for subsequent step PGT Wave Correction._
 
 5. [PGT Wave correction](Haplarithmisis/WaveCorrection.sh) _Note: the output from WaveCorrection is a .txt file containing GC content for each position with average of 10000 bp bins. The CG content file could be used for GC correction in downstream steps. In our analysis, we have not used this file for GC correction as QDNAseq package has integrated functions for GC correction._
@@ -46,12 +52,10 @@ These are R scripts to process whole genome sequencing data using Haplarithmisis
 7. [EmbryoTestReportData](Haplarithmisis/EmbryoTestReportData)
 8. [EmbryoTestReportPlot](Haplarithmisis/EmbryoTestReportPlot)
 
-#### PreTest: if no embryo sequencing information is present (continue with step9 PreTestReportData)
+##### PreTest: if no embryo sequencing information is present (continue with step9 PreTestReportData)
 9. [PreTestReportData](Haplarithmisis/PreTestReportData)
 10. [PreTestReportPlot](Haplarithmisis/PreTestReportPlot)
 
-+ [functions](Haplarithmisis/functions)
-+ [Rda](Haplarithmisis/Rda)
 
 ## Data processing & QC
 + [Subsampling](QC/SubSampling.sh) to desired target coverage
