@@ -27,7 +27,7 @@ calculateLogR <- function(bins, colID, filterbamFiles){
 	copyNumbersSmooth <- smoothOutlierBins(copyNumbersNormalized)
 	
 	# Extract data assay element from the smoothed copy numbers
-	dat <- assayDataElement(copyNumbersSmooth2, "copynumber")
+	dat <- assayDataElement(copyNumbersSmooth, "copynumber")
 	
 	# Set the column names of data to the corresponding SampleID
 	colnames(dat) <- colID
