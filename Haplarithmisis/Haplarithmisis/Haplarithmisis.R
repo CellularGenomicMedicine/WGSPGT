@@ -143,7 +143,7 @@ tryCatch({
     # Order BAfs data
     BAFs <- BAFs[order(BAFs$Chr, BAFs$Position), ]
     # Write Gtypes data to file
-    write.table(Gtypes, paste(outPathData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value, "_Gtypes", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
+    write.table(Gtypes, paste(HaplarithmisisData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value, "_Gtypes", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
 
     # Count the number of Gtype data points for each of the chromosomes and throw error if the number is lower than 25.
     validateGtype(Gtypes, Chroms, outPathPlots)
@@ -162,7 +162,7 @@ tryCatch({
     QCbyParents <- Haplarithmisis_qcbyparents(Father, Mother, Gtypes, EmbryoID, Chroms, outPathPlots)
     
     # Determine the parent of origin and write table 
-    dataPo <- Haplarithmisis_parentoforigin(Father, Mother, Gtypes, family, EmbryoID, outPathData, Gamma_value, parent)
+    dataPo <- Haplarithmisis_parentoforigin(Father, Mother, Gtypes, family, EmbryoID, HaplarithmisisData, Gamma_value, parent)
     
     # Calculate the parental score 
     ParScore <- Haplarithmisis_ParScore(Father, Mother, dataPo, QC, Chroms, Gtypes, EmbryoID)
@@ -188,19 +188,19 @@ tryCatch({
     PhBAF[["M2Seg"]] <- Haplarithmisis_callpcfBAF(script, PhBAF[["M2"]], Gamma_value, plateau, EmbryoID)
 
     # Write table of the (segmented) phased B-allele frequencies into separate files
-    Haplarithmisis_writePhBAF(PhBAF, outPathData, parent, EmbryoID, family, Gamma_value)
+    Haplarithmisis_writePhBAF(PhBAF, HaplarithmisisData, parent, EmbryoID, family, Gamma_value)
     # Write table of the interpreted / segmented Haplotypes
-    write.table(Haps[["dataHap"]], paste(outPathData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value, "_dataHap", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
+    write.table(Haps[["dataHap"]], paste(HaplarithmisisData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value, "_dataHap", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
     # Write table of the interpreted / segmented Haplotypes
-    write.table(Haps[["dataHapRaw"]], paste(outPathData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value,"_dataHapRaw", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
+    write.table(Haps[["dataHapRaw"]], paste(HaplarithmisisData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value,"_dataHapRaw", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
     # Write table of the B-allele frequencies
-    writeData(BAFs, family, fam_members, parents, paste(Gamma_value, "BAF", sep = "_"), outPathData)
+    writeData(BAFs, family, fam_members, parents, paste(Gamma_value, "BAF", sep = "_"), HaplarithmisisData)
 
     # Process and filter computed data
     Intp <- Haplarithmisis_intphappropser3(Haps, ParScore, EmbryoID, Chroms)
     
     # Determine the distance to the genetic interval of interest
-    Haplarithmisis_disthap(Intp, Int, outPathData, EmbryoID, Chrom)
+    Haplarithmisis_disthap(Intp, Int, HaplarithmisisData, EmbryoID, Chrom)
   }
 }, error = function(e) {
   write(paste0("Haplarithmisis gave the following error: ", e), errorFilePath, sep = "")
