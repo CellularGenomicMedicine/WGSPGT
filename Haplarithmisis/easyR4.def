@@ -3,7 +3,7 @@ From: rocker/r-ver:4.2.1
 
 %labels
   Author Ping Cao
-  Version v1.0-
+  Version v1.0
   R_Version 4.2.1
   build_date 2024 Mar 30
   R_bioconductor True
@@ -16,10 +16,10 @@ From: rocker/r-ver:4.2.1
 
 %runscript
   exec R "$@"
--
+
 %post
     export DEBIAN_FRONTEND=noninteractive
-    apt-get update -
+    apt-get update
     apt-get install -y --no-install-recommends
     apt-get install -y apt bash curl libz-dev libbz2-dev libclang-dev liblzma-dev libcurl4-openssl-dev
     apt-get install -y libxml2-dev libssl-dev libfribidi-dev python3
