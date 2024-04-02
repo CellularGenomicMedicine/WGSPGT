@@ -28,7 +28,7 @@ Sequencing output is processed via the following steps (scripts not included her
 ### Running Haplarithmisis
 #### Installation
 - Installed packages in **Singularity**: [R version 3.3](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR3.def), [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.def).
-- **Docker:** [Dockerfile R version 4.2]([https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/Dockerfile](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.Dockerfile)).
+- Installed packages in **Docker:** [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.Dockerfile).
 
 #### Scripts
 These are R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT. Here is a step-by-step implementation in [notebook](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/WGSPGT_haplarithmisis_pipeline.ipynb), we also provide a python pipeline for wrapping up these steps, see [haplarithmisis_pipeline.py](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/haplarithmisis_pipeline.py).
