@@ -24,6 +24,7 @@ if (file.exists(errorFilePath)) {
 # Load libraries
 library(data.table)
 library(QDNAseq)
+library(Biobase)
 
 # Set options
 options(scipen=999)
