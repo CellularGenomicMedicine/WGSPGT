@@ -9,26 +9,20 @@ Specifically, our innovative approach outperforms traditional and state-of-the-a
 4. (in)direct detection of the translocation breakpoints and inheritance of normal and derivative chromosomes
 5. PGT for mitochondrial DNA (mtDNA) disorders
 
-_Note:_ the included bash scripts are optimised for computation on a high performance computing cluster
-running a SLURM job scheduler. The specified resource requirements were optimised for the sequencing data
-generated for this project.
+_Note:_ Sequencing pre-processing steps are included [here](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/preprocessing.txt).
 
 ## Haplarithmisis
-### Pre-processing
-Sequencing output is processed via the following steps (scripts not included here)
-1. Demultiplexing
-2. FASTQC
-3. Alignment using BWA-MEM2
-4. BAMQC
-5. GATK Joint-genotyping using GATK4 <br>
-   Family-wise batches (i.e. multisample vcf files) are generated using gatk-haplotype-joint calling. The resulting vcf file was analysed by Haplarithmisis. <br>
-   _GATK4 from Broad Institute is available [here](https://gatk.broadinstitute.org/hc/en-us)_
+### 
 
-   
 ### Running Haplarithmisis
 #### Installation
 - Installed packages in **Singularity**: [R version 3.3](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR3.def), [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.def).
 - Installed packages in **Docker:** [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.Dockerfile).
+
+#### Usage
+```
+singularity exec easyR4.def Rscript {script_path} {config_file} {err_file}
+```
 
 #### Scripts
 These are R scripts to process whole genome sequencing data using Haplarithmisis for WGS-PGT. Here is a step-by-step implementation in [notebook](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/WGSPGT_haplarithmisis_pipeline.ipynb), we also provide a python pipeline for wrapping up these steps, see [haplarithmisis_pipeline.py](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/haplarithmisis_pipeline.py).
@@ -55,6 +49,7 @@ These are R scripts to process whole genome sequencing data using Haplarithmisis
 ##### PreTest: if no embryo sequencing information is present (continue with step9 PreTestReportData)
 9. [PreTestReportData](Haplarithmisis/PreTestReportData)
 10. [PreTestReportPlot](Haplarithmisis/PreTestReportPlot)
+
 
 
 ## Data processing & QC
