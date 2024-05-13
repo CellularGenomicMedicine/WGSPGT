@@ -1,0 +1,9 @@
+Sequencing output is processed via the following steps (scripts not included here)
+
+1. Demultiplexing
+2. FASTQC
+3. Alignment using BWA-MEM2
+4. BAMQC
+5. GATK Joint-genotyping using GATK4
+6. Family-wise batches (i.e. multisample vcf files) are generated using gatk-haplotype-joint calling. The resulting vcf file was analysed by Haplarithmisis.
+7. GATK4 from Broad Institute is available at gatk.broadinstitute.org.
