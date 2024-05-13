@@ -12,9 +12,7 @@ Specifically, our innovative approach outperforms traditional and state-of-the-a
 _Note:_ Sequencing pre-processing steps are included [here](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/preprocessing.txt).
 
 ## Haplarithmisis
-### 
 
-### Running Haplarithmisis
 #### Installation
 - Installed packages in **Singularity**: [R version 3.3](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR3.def), [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.def).
 - Installed packages in **Docker:** [R version 4.2](https://github.com/CellularGenomicMedicine/WGSPGT/blob/main/Haplarithmisis/easyR4.Dockerfile).
