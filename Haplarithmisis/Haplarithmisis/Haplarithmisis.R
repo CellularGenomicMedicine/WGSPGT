@@ -146,7 +146,7 @@ tryCatch({
     write.table(Gtypes, paste(HaplarithmisisData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value, "_Gtypes", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
 
     # Count the number of Gtype data points for each of the chromosomes and throw error if the number is lower than 25.
-    validateGtype(Gtypes, Chroms, outPathPlots)
+    validateGtype(Gtypes, Chroms, outPathPlots, Chrom)
     
     Chroms <- unique(Gtypes$Chr)
     
