@@ -1,6 +1,18 @@
 Bootstrap: docker
 From: rocker/r-ver:4.2.1
 
+# singularity definition file for environment to run haplarithmisis scripts
+# ----------------------
+# running R version 4.2.1 and Bioconductor version 3.16
+# instructions for building:
+#   1. have docker installed on your laptop
+#.  2. download this definition file
+#.  3. run the docker container containing singularity: `docker run -it --entrypoint=/bin/bash --privileged --rm -v ${PWD}:/home/singularity quay.io/singularity/singularity:v3.7.0`
+#.  4. within the container, start building the image: `singularity build easyR4.sig /home/singularity/easyR4.def`
+#.  5. the building process might take more than an hour.
+#.  6. once done, copy the image and exit the container `cp easyR4.sig /home/singularity/ && exit`
+
+
 %labels
   Author Ping Cao
   Version v1.0
@@ -26,8 +38,8 @@ From: rocker/r-ver:4.2.1
     apt-get purge -y --autoremove software-properties-common
     apt-get clean && rm -rf /var/lib/apt/lists/*
     
-    R -e "install.packages(c('devtools', 'BiocManager', 'vcfR', 'textshaping', 'tidyverse'))" 
+    R -e "install.packages(c('devtools', 'BiocManager', 'vcfR', 'textshaping', 'tidyverse', 'MatrixStats'))" 
     
     R -e "options(warn=2); install.packages('BiocManager')"
     R -e "options(warn=2); BiocManager::install(c('SNPlocs.Hsapiens.dbSNP144.GRCh37', 'VariantAnnotation', 'snpStats', 'limma', 'signal', 'plotrix', 'MASS', 'data.table', 'QDNAseq', 'Biobase'), ask = FALSE, force = TRUE)"
-    R -e "options(warn=2); BiocManager::install(c('Matrix', 'survival', 'Rsamtools', 'Biostrings', 'XVector', 'SummarizedExperiment', 'GenomicRanges', 'GenomeInfoDb', 'IRanges', 'S4Vecotrs', 'BiocGenerics', 'BiocVersion', 'MatrixGenerics', 'MatrixStats'), ask = FALSE, force = TRUE)"  
+    R -e "options(warn=2); BiocManager::install(c('Matrix', 'survival', 'Rsamtools', 'Biostrings', 'XVector', 'SummarizedExperiment', 'GenomicRanges', 'GenomeInfoDb', 'IRanges', 'S4Vectors', 'BiocGenerics', 'BiocVersion', 'MatrixGenerics'), ask = FALSE, force = TRUE)"  
