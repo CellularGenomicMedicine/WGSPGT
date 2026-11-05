@@ -200,7 +200,7 @@ tryCatch({
     Intp <- Haplarithmisis_intphappropser3(Haps, ParScore, EmbryoID, Chroms)
     
     # Determine the distance to the genetic interval of interest
-    Haplarithmisis_disthap(Intp, Int, HaplarithmisisData, EmbryoID, Chrom)
+    Haplarithmisis_disthap(Intp, Int, HaplarithmisisData, EmbryoID, Chrom, parent, family, Gamma_value)
   }
 }, error = function(e) {
   write(paste0("Haplarithmisis gave the following error: ", e), errorFilePath, sep = "")
