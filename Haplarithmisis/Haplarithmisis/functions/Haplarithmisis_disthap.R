@@ -1,6 +1,6 @@
 # Haplarithmisis_disthap - Function to calculate the distance to the genetic interval of interest
 
-Haplarithmisis_disthap <- function(Intp, Int, outPathData, EmbryoID, Chrom){
+Haplarithmisis_disthap <- function(Intp, Int, outPathData, EmbryoID, Chrom, parent, family, Gamma_value){
   # Extract the haplotype data from the Intp object
 	HapsIntp <- Intp[["dataHap"]]
 	
@@ -41,5 +41,5 @@ Haplarithmisis_disthap <- function(Intp, Int, outPathData, EmbryoID, Chrom){
 	# Set column names for the Distance data frame
 	colnames(DistFam) <- c("Haplotype", "Chr", "LengthUp", "LengthDown", "ValueUp", "ValueDown")
 	# Write table with distance data to file
-	write.table(DistFam,paste(outPathData, "DistanceToHR.txt", sep = "/"), quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
+	write.table(DistFam,paste(outPathData, paste0(parent, "_", EmbryoID, "_", family, "_", Gamma_value, "_DistanceToHR.txt"), sep = "/"), quote = FALSE, sep = "\t", col.names = TRUE, row.names = FALSE)
 }
