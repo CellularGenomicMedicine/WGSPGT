@@ -11,7 +11,7 @@ Haplarithmisis_inthapnew1 <- function(script, dataHapRaw, Window, Int, Chroms){
 	# Naively exclude the putative abberant regions
 	for(i in 1:nrow(Int)){
 
-		dataHapRaw[dataHapRaw$Chr == Int[i, 1] & as.numeric(dataHapRaw$Position) >= as.numeric(Int[i, 2]) & as.numeric(dataHapRaw$Position) <= as.numeric(Int[i, 3]) ,grep(Int[i, 4], colnames(dataHapRaw))] <- 0
+		dataHapRaw[dataHapRaw$Chr == Int[i, 1] & as.numeric(dataHapRaw$Position) >= as.numeric(Int[i, 2]) & as.numeric(dataHapRaw$Position) <= as.numeric(Int[i, 3]) ,colnames(dataHapRaw) %in% paste0(Int[i, 4], c("_Pat", "_Mat"))] <- 0
 
 	}#end i loop
 

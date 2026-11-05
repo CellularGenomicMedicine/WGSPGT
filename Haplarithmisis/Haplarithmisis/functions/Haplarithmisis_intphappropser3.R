@@ -63,7 +63,7 @@ Haplarithmisis_intphappropser3 <- function(Haps, ParScore, EmbryoID, Chroms){
 	print("Probability computation...")
 
 	# Extract columns for the current embryo from dataHap1
-	Blasts <- colnames(dataHap1)[grepl(EmbryoID, colnames(dataHap1))]
+	Blasts <- colnames(dataHap1)[colnames(dataHap1) %in% paste0(EmbryoID, c("_Pat", "_Mat"))]
 	
 	for (samp in Blasts){
 	  
@@ -151,7 +151,7 @@ Haplarithmisis_intphappropser3 <- function(Haps, ParScore, EmbryoID, Chroms){
 	}#end samp loop
 
 	# Process and filter computed data
-	MDAs <- do.call(rbind, Samps[grepl(EmbryoID, names(Samps))])
+	MDAs <- do.call(rbind, Samps[names(Samps) %in% paste0(EmbryoID, c("_Pat", "_Mat"))])
 
 	# Separate the rows with chromsome X into a separate matrix and add them back if they contain Mat in the row names
 	X <- MDAs[which(MDAs$Chr == "X"), ]
