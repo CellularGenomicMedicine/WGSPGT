@@ -1,6 +1,6 @@
 # Haplarithmisis_Htyping_Grandparents - Function for haplotyping using grandparents as reference
 
-Haplarithmisis_Htyping_Grandparents <- function(script,Father, Mother, Grandfather, Grandmother, Gtypes, ParScore, parent, Parent1, EmbryoID, Chroms){
+Haplarithmisis_Htyping_Grandparents <- function(script,Father, Mother, Grandfather, Grandmother, Gtypes, ParScore, parent, Parent1, EmbryoID, Chroms, Window, Int){
 
   # Source the functions used in this function
   # Source the function used for sex determination of the embryo
