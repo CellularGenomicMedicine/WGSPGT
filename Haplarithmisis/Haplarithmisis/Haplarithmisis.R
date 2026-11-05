@@ -170,7 +170,7 @@ tryCatch({
     # Haplotyping and Phasing
     if (REF == "Grandparents") { # Check if reference is grandparents
       # Perform haplotyping for grandparents as reference
-      Haps <- Haplarithmisis_Htyping_Grandparents(script, Father, Mother, Grandfather, Grandmother, Gtypes, ParScore, parent, Parent1, EmbryoID, Chroms)
+      Haps <- Haplarithmisis_Htyping_Grandparents(script, Father, Mother, Grandfather, Grandmother, Gtypes, ParScore, parent, Parent1, EmbryoID, Chroms, Window, Int)
       # Perform phasing of parental B-allele frequencies for grandparents as reference
       PhBAF <- Haplarithmisis_Phasing_Grandparents(script, Father, Mother, Grandfather, Grandmother, Gtypes, BAFs, parent, Parent1, EmbryoID, flip)
     } else { # If referent is not grandparents
