@@ -27,7 +27,12 @@ Haplarithmisis_Htyping_Grandmother <- function(script,Father,Mother,RefSampleID,
 	Gtypes[Gtypes[,"Chr"] == "X", Father] <- Haplarithmisis_ChrXFatherAB(Gtypes, Father)
 
 	# Perform haplotyping for chromosome X using grandfather as reference
-	HapXMat <- Haplarithmisis_chrxhtyping_Grandmother(Father, Mother, RefSampleID, Gtypes, parent, ScSexes, EmbryoID)
+	# Skip chromosome X (no X rows or sex undetermined); X haplotypes are left as no-call
+	DoChrX <- any(Gtypes$Chr == "X") && !is.na(ScSexes[1, 2])
+	if (!DoChrX) warning(paste("Skipping chromosome X haplotyping for", EmbryoID, "(no chrX rows or chrX Par is NA)"))
+	if (DoChrX) {
+	  HapXMat <- Haplarithmisis_chrxhtyping_Grandmother(Father, Mother, RefSampleID, Gtypes, parent, ScSexes, EmbryoID)
+	}
 
 	# Phasing for parental haplotypes of the parent of indication
 	PhasedPar <- Gtypes[, Parent1]
@@ -83,7 +88,11 @@ Haplarithmisis_Htyping_Grandmother <- function(script,Father,Mother,RefSampleID,
 	names(Haps) <- c("dataHapRaw", "dataHap")
 
 	# Replace haplotypes for chromosome X in ParHaps by the HapXMat that was generated
-	ParHaps[Gtypes$Chr == "X"] <- HapXMat
+	if (DoChrX) {
+	  ParHaps[Gtypes$Chr == "X"] <- HapXMat
+	} else {
+	  ParHaps[Gtypes$Chr == "X"] <- 0
+	}
 
 	ParHapsAll        <- data.frame(Gtypes[,c("Names","Chr","Position")], ParHaps,stringsAsFactors=FALSE)
 	names(ParHapsAll) <- c("Names","Chr","Position", EmbryoID)
