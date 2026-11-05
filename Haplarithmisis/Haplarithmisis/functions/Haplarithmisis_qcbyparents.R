@@ -73,10 +73,10 @@ Haplarithmisis_qcbyparents <- function(Father, Mother, Gtypes, EmbryoID, Chroms,
 	
 	# Write ADO matrix to file
 	write.table(ADOs, paste(outPath, paste(EmbryoID, "ChrSpec_ADO.txt", sep = "_"), sep = "/"), 
-	            sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+	            sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
 	# Write ADI matrix to file
 	write.table(ADIs, paste(outPath, paste(EmbryoID, "ChrSpec_ADI.txt", sep = "_"), sep = "/"), 
-	            sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+	            sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
 	
 	# Store results in the list and return
 	QC_par[["ADO"]] <- ADOs
