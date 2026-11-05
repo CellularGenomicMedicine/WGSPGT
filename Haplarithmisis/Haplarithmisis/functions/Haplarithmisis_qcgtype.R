@@ -114,24 +114,24 @@ Haplarithmisis_qcgtype <- function(script, colID, Father, Mother, Gtypes, ChrPos
   
   # Write Call rate per chromosome matrix to file
   write.table(CallRateChrsInd, paste(outPath, paste(EmbryoID, "ChrSpec_CallRate.txt", sep = "_"), sep = "/"), 
-              sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+              sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
   
   # Write Heterozygous Call rate per chromosome matrix to file
   write.table(CallRateChrsHetInd, paste(outPath, paste(EmbryoID, "ChrSpec_HetCallRate.txt", sep = "_"), sep = "/"), 
-              sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+              sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
   
   # Write Homozygous Call rate per chromosome matrix to file
   write.table(CallRateChrsHomInd, paste(outPath, paste(EmbryoID, "ChrSpec_HomCallRate.txt", sep = "_"), sep = "/"), 
-              sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+              sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
   
   # Write Mendelian inconsistency matrix to file
   write.table(MendIncRateChrsInd, paste(outPath, paste(EmbryoID, "ChrSpec_MendInc.txt", sep = "_"), sep = "/"), 
-              sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+              sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
   
   # Check for chromosomes with Mendelian inconsistency rate over 15% and write to file
   if (any(MendIncRateChrsInd > 15)) {
     write.table(MendIncRateChrsInd, paste(outPath, paste(EmbryoID, "Chr_with_MendalianInconsistency_over_15_percent.txt", sep = "_"), sep = "/"), 
-                sep = "\t", quote = FALSE, col.names = TRUE, row.names = TRUE)
+                sep = "\t", quote = FALSE, col.names = NA, row.names = TRUE)
   }
 
   # Return the QC results list
