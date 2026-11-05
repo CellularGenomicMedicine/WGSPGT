@@ -42,6 +42,12 @@ Haplarithmisis_ParScore <- function(Father, Mother, dataPo, QC, Chroms, Gtypes, 
 		# Extract parent of origin data for the current chromosome
 		dataPoChr <- Pos[dataPo[, "Chr"] == chr, EmbryoID]
 		
+		# No informative markers (e.g. no rows for this chromosome): scores and Par stay NA
+		if (InfPo == 0) {
+		  PoScore[chr, ] <- c(NA, NA, NA, NA, CallRates[EmbryoID, chr], NA)
+		  next
+		}
+
 		# Calculate paternal and maternal scores
 		# - If dataPo is lower than 0, the parent of origin was paternal
 		# - If dataPo is higher than 0, the parent of origin was maternal

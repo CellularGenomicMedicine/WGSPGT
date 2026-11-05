@@ -25,7 +25,13 @@ Haplarithmisis_Htyping_SiblingMale <- function(script, Father, Mother, RefSample
   print("Autosomes are haplotyped")
   
   # Haplotyping of chromosome X for sibling male
-  HapsChrX <- Haplarithmisis_chrxhtypingOpt_SiblingMale(Father,Mother,RefSampleID,Gtypes,ParScore,EmbryoID)
+  # Skip chromosome X when there are no X rows or its Par is NA
+  if (any(Gtypes$Chr == "X") && "X" %in% rownames(ParScore[[EmbryoID]]) && !is.na(ParScore[[EmbryoID]]["X", "Par"])) {
+    HapsChrX <- Haplarithmisis_chrxhtypingOpt_SiblingMale(Father,Mother,RefSampleID,Gtypes,ParScore,EmbryoID)
+  } else {
+    warning(paste("Skipping chromosome X haplotyping for", EmbryoID, "(no chrX rows or chrX Par is NA)"))
+    HapsChrX <- NULL
+  }
   
   # Combine autosomes and chromsome X haplotyeps into dataHapRaw list element
   Haps[["dataHapRaw"]] <- rbind(HapsAut,HapsChrX)
