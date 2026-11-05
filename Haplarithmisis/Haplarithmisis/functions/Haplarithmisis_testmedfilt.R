@@ -7,7 +7,7 @@ Haplarithmisis_testmedfilt <- function(Hap, Window, Chroms){
 		HapChr <- Hap[Hap$Chr == chr, 4]
 		
 		# Define chromosome-specific window size for median filtering
-		WindowChr <- round((Window * length(Hap$Chr == chr)) / length(Hap$Chr == 1))
+		WindowChr <- round((Window * sum(Hap$Chr == chr)) / sum(Hap$Chr == "1"))
 		if((WindowChr %% 2) == 0) { 
 		  WindowChr <- WindowChr + 1
 		}
