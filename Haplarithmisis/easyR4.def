@@ -29,5 +29,5 @@ From: rocker/r-ver:4.2.1
     R -e "install.packages(c('devtools', 'BiocManager', 'vcfR', 'textshaping', 'tidyverse'))" 
     
     R -e "options(warn=2); install.packages('BiocManager')"
-    R -e "options(warn=2); BiocManager::install(c('SNPlocs.Hsapiens.dbSNP144.GRCh37', 'VariantAnnotation', 'snpStats', 'limma', 'signal', 'plotrix', 'MASS', 'data.table', 'QDNAseq', 'Biobase'), ask = FALSE, force = TRUE)"
+    R -e "options(warn=2); BiocManager::install(c('SNPlocs.Hsapiens.dbSNP144.GRCh37', 'VariantAnnotation', 'snpStats', 'limma', 'signal', 'plotrix', 'MASS', 'data.table', 'QDNAseq', 'Biobase', 'zoo'), ask = FALSE, force = TRUE)"
     R -e "options(warn=2); BiocManager::install(c('Matrix', 'survival', 'Rsamtools', 'Biostrings', 'XVector', 'SummarizedExperiment', 'GenomicRanges', 'GenomeInfoDb', 'IRanges', 'S4Vecotrs', 'BiocGenerics', 'BiocVersion', 'MatrixGenerics', 'MatrixStats'), ask = FALSE, force = TRUE)"  

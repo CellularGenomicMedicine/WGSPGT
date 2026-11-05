@@ -12,6 +12,13 @@ Haplarithmisis_callpcfBAF <- function(script,PhBAFseg,Gamma_value,plateau,Embryo
   # Load R script to perform Piecewise Constant Fitting (PCF)
   source(paste(script, "analyses",  "functions","selectFastPcf.R", sep = "/"))
   
+  # Fill NAs with the preceding value (leading NAs take the first non-NA value); an all-NA vector is returned unchanged
+  fillNA <- function(x){
+    if (all(is.na(x))) return(x)
+    x <- zoo::na.locf(x, na.rm = FALSE)
+    zoo::na.locf(x, fromLast = TRUE)
+  }
+  
   # Filter out the Y-chromosome from the Phased B-allele-frequencies (BAF)
   PhBAFseg <- PhBAFseg[PhBAFseg[,"Chr"] != "Y",]
   
@@ -22,24 +29,26 @@ Haplarithmisis_callpcfBAF <- function(script,PhBAFseg,Gamma_value,plateau,Embryo
   SegGenome <- NULL
   
   # Calculate the standard deviation of the BAF data
-  sdevGenome <- getMad(na.omit(PhBAFseg[,colnames(PhBAFseg) %in% EmbryoID]), k = plateau)
+  PhBAFAll <- na.omit(PhBAFseg[,colnames(PhBAFseg) %in% EmbryoID])
+  sdevGenome <- if (length(PhBAFAll) > 0) getMad(PhBAFAll, k = plateau) else NA_real_
   
   # if the calculated sd is zero, it computes sdevGenome as the mean of the standard deviation for each chromosome separately
-  if (sdevGenome == 0) {
+  if (is.na(sdevGenome) || sdevGenome == 0) {
     sdevCat <- NULL;
     for(chr in unique(PhBAFseg[,"Chr"])){
       # For each chromosome in the BAF data assign to PhBAFChr variable
       PhBAFChr <- PhBAFseg[as.character(PhBAFseg$Chr) == chr, EmbryoID];
-      # while there are more than 1 NAs in the BAF data per chromosome, assign the preceding BAF value to the missing value.
-      while(sum(is.na(PhBAFChr)) >= 1){
-        PhBAFChr[which(is.na(PhBAFChr))] <- PhBAFChr[which(is.na(PhBAFChr)) - 1]
-      }
+      # replace the NAs in the BAF data per chromosome with the preceding BAF value.
+      PhBAFChr <- fillNA(PhBAFChr)
+      # an all-NA chromosome has no usable scale
+      if (all(is.na(PhBAFChr))) next
       
       # Calculate the standard deviation of the adjusted BAF data
       sdev <- getMad(PhBAFChr, k = plateau);
       sdevCat <- c(sdevCat, sdev)
     }
-    sdevGenome <- mean(sdevCat)
+    # no chromosome with a usable scale gives NA (not NaN)
+    sdevGenome <- if (any(!is.na(sdevCat))) mean(sdevCat, na.rm = TRUE) else NA_real_
   } # end if statement sdevGenome == 0
   
   print(paste("sdevGenome", sdevGenome, sep = "_"))
@@ -48,9 +57,14 @@ Haplarithmisis_callpcfBAF <- function(script,PhBAFseg,Gamma_value,plateau,Embryo
   for(chr in unique(PhBAFseg[, "Chr"])){
     # For each chromosome in the BAF data assign to PhBAFChr
     PhBAFChr <- PhBAFseg[as.character(PhBAFseg$Chr) == chr, EmbryoID]
-    # while there are more than 1 NAs in the BAF data per chromosome, assign the preceding PhBAF value to the missing value.
-    while(sum(is.na(PhBAFChr)) >= 1){ 
-      PhBAFChr[which(is.na(PhBAFChr))] <- PhBAFChr[which(is.na(PhBAFChr)) - 1]
+    # replace the NAs in the BAF data per chromosome with the preceding PhBAF value.
+    PhBAFChr <- fillNA(PhBAFChr)
+    
+    # an all-NA chromosome cannot be segmented: raw values are passed through
+    if (all(is.na(PhBAFChr))) {
+      print(paste(chr, "PhBAFChr_allNA", length(PhBAFChr), sep = "_"))
+      SegGenome <- c(SegGenome, PhBAFChr)
+      next
     }
     
     # Calculate the MAD for the current chromosome
@@ -63,7 +77,8 @@ Haplarithmisis_callpcfBAF <- function(script,PhBAFseg,Gamma_value,plateau,Embryo
       sdev <- sdevGenome
     }
     # Depending on the number of data points per chromosome for the BAF data, the raw values are directly assigned to the segmented chromosome
-    if (length(PhBAFChr) < 100){
+    # (also when there is no usable scale, i.e. sdev is still NA)
+    if (length(PhBAFChr) < 100 || is.na(sdev)){
       SegChr <- PhBAFChr; 
       print(paste(chr, "PhBAFChr", length(PhBAFChr), sep = "_"))
     } else { 

@@ -43,5 +43,6 @@ RUN Rscript -e 'options(warn=2); BiocManager::install(c( \
         "MASS", \
         "data.table", \
         "QDNAseq", \
-        "Biobase" \
+        "Biobase", \
+        "zoo" \
     ), ask = FALSE, force = TRUE)' 
