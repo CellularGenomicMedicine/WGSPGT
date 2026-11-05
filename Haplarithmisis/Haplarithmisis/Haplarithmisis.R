@@ -136,20 +136,20 @@ tryCatch({
     # Filter Gtypes on BAFs without NA
     Gtypes <- Gtypes[Gtypes$Names %in% BAFs$Names, ] # Filter Gtypes based on BAFs
     # Order Gtypes data
-    Gtypes <- Gtypes[order(Gtypes$Chr, Gtypes$Position), ]
+    Gtypes <- Gtypes[order(factor(Gtypes$Chr, levels = c(1:22, "X")), Gtypes$Position), ]
     
     # Filter BAFs to match Gtypes
     BAFs <- BAFs[BAFs$Names %in% Gtypes$Names,]
     # Order BAfs data
-    BAFs <- BAFs[order(BAFs$Chr, BAFs$Position), ]
+    BAFs <- BAFs[order(factor(BAFs$Chr, levels = c(1:22, "X")), BAFs$Position), ]
     # Write Gtypes data to file
     write.table(Gtypes, paste(HaplarithmisisData, paste0(parent, "_", EmbryoID, "_", family,"_",Gamma_value, "_Gtypes", ".txt"), sep = "/"), row.names = FALSE, quote = FALSE, sep = "\t")
 
     # Count the number of Gtype data points for each of the chromosomes and throw error if the number is lower than 25.
     validateGtype(Gtypes, Chroms, outPathPlots, Chrom)
     
-    Chroms <- unique(Gtypes$Chr)
-    
+    Chroms <- intersect(c(1:22, "X"), unique(Gtypes$Chr))
+
     # Quality Control
     
     # Retrieve the chromosomes and positions
