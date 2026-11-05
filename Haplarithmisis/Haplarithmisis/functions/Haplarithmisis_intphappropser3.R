@@ -66,7 +66,10 @@ Haplarithmisis_intphappropser3 <- function(Haps, ParScore, EmbryoID, Chroms){
 	Blasts <- colnames(dataHap1)[grepl(EmbryoID, colnames(dataHap1))]
 	
 	for (samp in Blasts){
-	  
+
+	  # Collect the per-chromosome tables of the current sample
+		ChrTabs <- list()
+
 		for(chr in Chroms){
 			if(!is.na(ParScore[[EmbryoID]][chr, "Par"])){
 			  # Filter haplotype to the current chromosome
@@ -120,23 +123,20 @@ Haplarithmisis_intphappropser3 <- function(Haps, ParScore, EmbryoID, Chroms){
 					CumLength <- cbind.data.frame(Annot,IntBlock$lengths, t(CumLength), InfSNPs, InfSNPsDisc, Frac)
 				}
 				
-				# Checks chromosome origins based on phased haplotype probabilities in ParScore and updates CumLengths accordingly
-				Chroms2 <- rownames(ParScore[[EmbryoID]])
-				if (chr == Chroms2[which(ParScore[[EmbryoID]][, "Par"] != "NA")[1]]){
-				  CumLengths <- CumLength 
-				} else {
-				    CumLengths <- rbind(CumLengths, CumLength)
-				}
-				
+				# Add the table of the current chromosome to ChrTabs
+				ChrTabs[[length(ChrTabs) + 1]] <- CumLength
+
 			} else {
 			  print(paste("The origin of chr.", chr, "of", EmbryoID, "could not be determined"))
 			}
 		  
 		}#end chr loop
 
-	  # If Cumlengths does not exists, create an empty matrix with 2 rows and 9 columns
-		if (exists("CumLengths") == FALSE){
-		  CumLengths <- matrix(0, 2, 9)
+	  # Combine the per-chromosome tables; if none were collected, create an empty data frame with 9 columns
+		if (length(ChrTabs) == 0){
+		  CumLengths <- data.frame(character(0), character(0), character(0), numeric(0), numeric(0), numeric(0), numeric(0), numeric(0), numeric(0))
+		} else {
+		  CumLengths <- do.call(rbind, ChrTabs)
 		}
 		
 	  # Assign column names to the CumLengths
@@ -147,7 +147,6 @@ Haplarithmisis_intphappropser3 <- function(Haps, ParScore, EmbryoID, Chroms){
 		CumLengths <- CumLengths[CumLengths[,"Value"] !=0 , ]
 		Samps[[samp]] <- CumLengths
 		print(samp)
-		rm(list = "CumLengths")
 	}#end samp loop
 
 	# Process and filter computed data
@@ -164,19 +163,34 @@ Haplarithmisis_intphappropser3 <- function(Haps, ParScore, EmbryoID, Chroms){
 	MDAs[, "Start"] <- as.numeric(as.character(MDAs[, "Start"]))
 	MDAs[, "Stop"] <- as.numeric(as.character(MDAs[, "Stop"]))
 
-	# Perform linear regression with Informative SNPs and length as predictor
-	LmFit <- rlm(MDAs[,"#InfSNPs"] ~ MDAs[, "Length"], data = MDAs)
-	# Combine the original data, fitted values from linear model, residuals and fills the probability column with NA values.
-	DataCompl <- cbind(MDAs, LmFit$fitted.values, LmFit$resid, rep(NA, nrow(MDAs)))
-	colnames(DataCompl)[(ncol(DataCompl) - 2) : ncol(DataCompl)] <- cbind("Fitted", "Resid", "Prob")
-	# Create a subset of DataCompl containing rows where residual is lower than 0.
-	NegRes <- subset(DataCompl, Resid < 0)
+	# Perform linear regression with Informative SNPs and length as predictor; no fit when no blocks qualify or the fit fails
+	LmFit <- NULL
+	if (nrow(MDAs) == 0){
+	  print(paste("No haplotype blocks of", EmbryoID, "qualify for the probability computation"))
+	} else {
+	  LmFit <- tryCatch(rlm(MDAs[,"#InfSNPs"] ~ MDAs[, "Length"], data = MDAs), error = function(e){
+	    warning(paste("The probability computation of", EmbryoID, "failed:", conditionMessage(e)))
+	    NULL
+	  })
+	}
 
-	# Computes Z-scores for the residuals in DataCompl
-	zscores <- scale(DataCompl$Resid, center = TRUE, scale = TRUE)
-	datawithzscores <- cbind(DataCompl, zscores)
-	DataCompl[,"Prob"] <- round(pnorm(-abs(datawithzscores$zscores)) + 0.5, digits = 3)
-	DataCompl[DataCompl[, "Resid"] > 0, "Prob"] <- 1
+	if (is.null(LmFit)){
+	  # Fill the Fitted, Resid and Prob columns with NaN values
+	  DataCompl <- cbind(MDAs, rep(NaN, nrow(MDAs)), rep(NaN, nrow(MDAs)), rep(NaN, nrow(MDAs)))
+	  colnames(DataCompl)[(ncol(DataCompl) - 2) : ncol(DataCompl)] <- cbind("Fitted", "Resid", "Prob")
+	} else {
+	  # Combine the original data, fitted values from linear model, residuals and fills the probability column with NA values.
+	  DataCompl <- cbind(MDAs, LmFit$fitted.values, LmFit$resid, rep(NA, nrow(MDAs)))
+	  colnames(DataCompl)[(ncol(DataCompl) - 2) : ncol(DataCompl)] <- cbind("Fitted", "Resid", "Prob")
+	  # Create a subset of DataCompl containing rows where residual is lower than 0.
+	  NegRes <- subset(DataCompl, Resid < 0)
+
+	  # Computes Z-scores for the residuals in DataCompl
+	  zscores <- scale(DataCompl$Resid, center = TRUE, scale = TRUE)
+	  datawithzscores <- cbind(DataCompl, zscores)
+	  DataCompl[,"Prob"] <- round(pnorm(-abs(datawithzscores$zscores)) + 0.5, digits = 3)
+	  DataCompl[DataCompl[, "Resid"] > 0, "Prob"] <- 1
+	}
 
 	# Organize and return interpreted data
 	Intp <- vector("list", 2)
